@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression Test Suite" verbose="1">
+    <listeners>
+        <listener class-name="org.epamLab.listeners.ScreenshotListener" />
+    </listeners>
+    <test name="Regression Tests">
+        <parameter name="environment" value="dev" />
+        <parameter name="browser" value="safari" />
+        <classes>
+            <class name="base.AddProductToWishlistTest" />
+            <class name="base.AddProductWithSetQuantityTest" />
+        </classes>
+    </test>
+</suite>

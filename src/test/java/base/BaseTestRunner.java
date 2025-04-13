@@ -1,32 +1,36 @@
 package base;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Step;
+import lombok.Getter;
+import org.epamLab.driver.DriverManager;
+import org.epamLab.utils.EnvironmentProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
+
 
 public class BaseTestRunner {
+    @Getter
     protected WebDriver driver;
     protected WebDriverWait wait;
+    protected EnvironmentProperties envProps;
 
     @BeforeSuite
-    public void beforeSuite() {
-        WebDriverManager.chromedriver().setup();
+    @Parameters({"environment"})
+    public void beforeSuite(String environment) {
+        envProps = new EnvironmentProperties(environment);
     }
 
     @BeforeMethod
     public void beforeMethod() {
-        ChromeOptions options = new ChromeOptions();
-        driver = new ChromeDriver(options);
+        String browser = envProps.getProperty("browser");
+        driver = DriverManager.getDriver(browser);
         driver.manage().window().maximize();
-        driver.get("https://samguk.com.ua/");
+        driver.get(envProps.getProperty("baseUrl"));
     }
 
     @AfterMethod(alwaysRun = true)
