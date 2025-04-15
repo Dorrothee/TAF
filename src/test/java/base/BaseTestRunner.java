@@ -17,15 +17,15 @@ public class BaseTestRunner {
     @Getter
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected EnvironmentProperties envProps;
+    protected static EnvironmentProperties envProps;
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     @Parameters({"environment"})
     public void beforeSuite(String environment) {
         envProps = new EnvironmentProperties(environment);
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {
         String browser = envProps.getProperty("browser");
         driver = DriverManager.getDriver(browser);
@@ -35,9 +35,7 @@ public class BaseTestRunner {
 
     @AfterMethod(alwaysRun = true)
     public void afterMethod() {
-        if (driver != null) {
-            driver.quit();
-        }
+        DriverManager.quitDriver();
     }
 
     protected void waitForElementToBeVisible(WebElement element) {
