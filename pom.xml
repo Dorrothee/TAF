@@ -71,11 +71,9 @@
                 <version>3.5.3</version> <!-- Replace with the latest version -->
                 <configuration>
                     <suiteXmlFiles>
-                        <!-- This refers to your TestNG suite files -->
+                        <!-- This refers to the TestNG suite files -->
                         <!--suppress UnresolvedMavenProperty -->
                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-<!--                        <suiteXmlFile>src/test/resources/smoke.xml</suiteXmlFile>-->
-<!--                        <suiteXmlFile>src/test/resources/regression.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
