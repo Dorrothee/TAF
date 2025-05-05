@@ -10,7 +10,7 @@ This project was cloned from the previous task (SeleniumWebDriver project) for e
 ## Setup Instructions
 1. **Clone repository**
 2. **Add (check) dependencies**: Selenium WebDriver, TestNG, WebDriverManager, log4j.
-3. **Run Tests**: Right-click on the desired test to run
+3. **Run Tests**: In a terminal execute the following command ` mvn test -DsuiteXmlFile=src/test/resources/***.xml `, where `***.xml` is a desired suite to run.
 
 ## The framework should have
 - WebDriverManager for managing drivers for different browsers; 
