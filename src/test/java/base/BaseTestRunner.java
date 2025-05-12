@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
+import java.time.Duration;
+
 
 public class BaseTestRunner {
     @Getter
@@ -20,17 +22,23 @@ public class BaseTestRunner {
     protected static EnvironmentProperties envProps;
 
     @BeforeSuite(alwaysRun = true)
-    @Parameters({"environment"})
-    public void beforeSuite(String environment) {
-        envProps = new EnvironmentProperties(environment);
+    public void beforeSuite() {
+        //Pick up -Denvironment from Maven; default to "test"
+        String env = System.getProperty("environment", "test");
+        envProps = new EnvironmentProperties(env);
     }
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {
-        String browser = envProps.getProperty("browser");
+        //Pick up -Dbrowser; fallback to what’s in your .properties file
+        String browser = System.getProperty("browser",
+                envProps.getProperty("browser"));
         driver = DriverManager.getDriver(browser);
         driver.manage().window().maximize();
         driver.get(envProps.getProperty("baseUrl"));
+
+        //Initialize wait after the driver
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     @AfterMethod(alwaysRun = true)
