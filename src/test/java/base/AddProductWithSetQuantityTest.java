@@ -21,7 +21,7 @@ public class AddProductWithSetQuantityTest extends BaseTestRunner {
 
         String product = "Токпоккі з сиром, 240г";
         int quantity = 3;
-        String price = "687";
+        String price = "6870";
 
         //Step 1-2: Enter title of the product to search for and click on it
         logger.info("Searching for product: " + product);

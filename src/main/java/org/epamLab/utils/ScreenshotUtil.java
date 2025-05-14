@@ -18,8 +18,8 @@ public class ScreenshotUtil {
     public static String captureScreenshot(WebDriver driver, String testName) throws IOException {
         //Generate timestamp for unique filenames
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String screenshotName = "screenshots/" + testName + "_" + timestamp + ".png";
-        File screenshotDir = new File("screenshots");
+        String screenshotName = "src/test/resources/screenshots/" + testName + "_" + timestamp + ".png";
+        File screenshotDir = new File("src/test/resources/screenshots");
         if (!screenshotDir.exists() && !screenshotDir.mkdirs()) {
             throw new IOException("Could not create directory: " + screenshotDir.getAbsolutePath());
         }

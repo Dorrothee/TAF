@@ -15,28 +15,21 @@ public class ScreenshotListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        Object testInstance = result.getInstance(); //Get the test class instance dynamically
         WebDriver driver = null;
 
-        try {
-            //Use reflection to fetch the 'driver' field from the test class
-            java.lang.reflect.Field driverField = testInstance.getClass().getDeclaredField("driver");
-            driverField.setAccessible(true); //Allow access even if 'driver' is private or protected
-            driver = (WebDriver) driverField.get(testInstance);
+        //Get WebDriver from the TestNG context
+        if (result.getTestContext().getAttribute("driver") != null) {
+            driver = (WebDriver) result.getTestContext().getAttribute("driver");
+        }
 
-            if (driver != null) {
+        if (driver != null) {
+            try {
                 String testName = result.getName(); //Get the name of the failed test
                 String screenshotPath = ScreenshotUtil.captureScreenshot(driver, testName); //Save screenshot
                 logger.error("Test '{}' failed. Screenshot saved at: {}", testName, screenshotPath);
-            } else {
+            } catch (Exception e) {
                 logger.error("WebDriver instance is null for test: '{}'", result.getName());
             }
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            //Handle errors while retrieving the 'driver' field
-            logger.error("Failed to access WebDriver instance for test '{}': {}", result.getName(), e.getMessage());
-        } catch (IOException e) {
-            //Handle errors during screenshot capture
-            logger.error("Failed to capture screenshot for test '{}': {}", result.getName(), e.getMessage());
         }
     }
 
