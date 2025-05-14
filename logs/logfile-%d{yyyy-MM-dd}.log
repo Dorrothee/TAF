@@ -35,3 +35,21 @@
 2025-05-14 16:25:26 [main] INFO  org.epamLab.utils.ScreenshotUtil - Screenshot saved successfully: C:\Users\daryn\OneDrive\Робочий стіл\Laboratory--2025\fixedTAF\src\test\resources\screenshots\verifyAddedProductWithSetQuantity_20250514_162526.png
 2025-05-14 16:25:26 [main] ERROR org.epamLab.listeners.ScreenshotListener - Test 'verifyAddedProductWithSetQuantity' failed. Screenshot saved at: C:\Users\daryn\OneDrive\Робочий стіл\Laboratory--2025\fixedTAF\src\test\resources\screenshots\verifyAddedProductWithSetQuantity_20250514_162526.png
 2025-05-14 16:25:26 [main] INFO  org.epamLab.listeners.ScreenshotListener - Test context 'Regression Tests' finished.
+2025-05-14 16:34:06 [main] INFO  org.epamLab.utils.EnvironmentProperties - Loaded environment properties from: src/test/resources/env_test.properties
+2025-05-14 16:34:06 [main] INFO  org.epamLab.listeners.ScreenshotListener - Test context 'Regression Tests' started.
+2025-05-14 16:34:14 [main] INFO  org.epamLab.listeners.ScreenshotListener - Test 'testAddProductToWishlist' passed successfully.
+2025-05-14 16:34:21 [main] INFO  org.epamLab.utils.ScreenshotUtil - Screenshot saved successfully: C:\Users\daryn\OneDrive\Робочий стіл\Laboratory--2025\fixedTAF\src\test\resources\screenshots\verifyAddedProductWithSetQuantity_20250514_163421.png
+2025-05-14 16:34:21 [main] ERROR org.epamLab.listeners.ScreenshotListener - Test 'verifyAddedProductWithSetQuantity' failed. Screenshot saved at: C:\Users\daryn\OneDrive\Робочий стіл\Laboratory--2025\fixedTAF\src\test\resources\screenshots\verifyAddedProductWithSetQuantity_20250514_163421.png
+2025-05-14 16:34:22 [main] INFO  org.epamLab.listeners.ScreenshotListener - Test context 'Regression Tests' finished.
+2025-05-14 16:37:13 [main] INFO  org.epamLab.utils.EnvironmentProperties - Loaded environment properties from: src/test/resources/env_test.properties
+2025-05-14 16:37:13 [main] INFO  org.epamLab.listeners.ScreenshotListener - Test context 'Regression Tests' started.
+2025-05-14 16:37:21 [main] INFO  org.epamLab.listeners.ScreenshotListener - Test 'testAddProductToWishlist' passed successfully.
+2025-05-14 16:37:28 [main] INFO  org.epamLab.utils.ScreenshotUtil - Screenshot saved successfully: C:\Users\daryn\OneDrive\Робочий стіл\Laboratory--2025\fixedTAF\src\test\resources\screenshots\verifyAddedProductWithSetQuantity_20250514_163727.png
+2025-05-14 16:37:28 [main] ERROR org.epamLab.listeners.ScreenshotListener - Test 'verifyAddedProductWithSetQuantity' failed. Screenshot saved at: C:\Users\daryn\OneDrive\Робочий стіл\Laboratory--2025\fixedTAF\src\test\resources\screenshots\verifyAddedProductWithSetQuantity_20250514_163727.png
+2025-05-14 16:37:28 [main] INFO  org.epamLab.listeners.ScreenshotListener - Test context 'Regression Tests' finished.
+2025-05-14 16:41:35 [main] INFO  org.epamLab.utils.EnvironmentProperties - Loaded environment properties from: src/test/resources/env_test.properties
+2025-05-14 16:41:35 [main] INFO  org.epamLab.listeners.ScreenshotListener - Test context 'Regression Tests' started.
+2025-05-14 16:41:43 [main] INFO  org.epamLab.listeners.ScreenshotListener - Test 'testAddProductToWishlist' passed successfully.
+2025-05-14 16:41:50 [main] INFO  org.epamLab.utils.ScreenshotUtil - Screenshot saved successfully: C:\Users\daryn\OneDrive\Робочий стіл\Laboratory--2025\fixedTAF\target\screenshots\verifyAddedProductWithSetQuantity_20250514_164150.png
+2025-05-14 16:41:50 [main] ERROR org.epamLab.listeners.ScreenshotListener - Test 'verifyAddedProductWithSetQuantity' failed. Screenshot saved at: C:\Users\daryn\OneDrive\Робочий стіл\Laboratory--2025\fixedTAF\target\screenshots\verifyAddedProductWithSetQuantity_20250514_164150.png
+2025-05-14 16:41:51 [main] INFO  org.epamLab.listeners.ScreenshotListener - Test context 'Regression Tests' finished.
