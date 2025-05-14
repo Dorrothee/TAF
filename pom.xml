@@ -61,6 +61,13 @@
             <version>1.2.12</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- For Epam Report Portal -->
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>agent-java-testng</artifactId>
+            <version>5.4.6</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -82,6 +89,13 @@
                         <!--suppress UnresolvedMavenProperty -->
                         <browser>${browser}</browser>
                     </systemPropertyVariables>
+
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>com.epam.reportportal.testng.ReportPortalTestNGListener</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>
